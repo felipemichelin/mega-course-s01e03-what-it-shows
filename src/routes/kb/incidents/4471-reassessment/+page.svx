@@ -1,0 +1,75 @@
+---
+layout: runbook
+title: '#4471 reassessment: two causes behind the date reports'
+owner: support desk
+status: proposed
+reviewed: '2026-11-25'
+signature: "v1.eyJzdWIiOiIyMzIxIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTU2MjExNTEsImV4cCI6MTc5NTcwNzU1MX0.Fq7pQJWSPZkrBkvvpl_wXYN2qNd5LkfkKISLpjMxEjQ"
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The archived incident calls every merged date report one parser bug. The executable KB views
+separate the reports by tenant locale, booking form and channel, rather than the intake tag or
+subject. The table below computes the current export's counts after deduplicating report IDs.
+
+<Callout>
+Keep one ticket per cause. The shared month-first parser and the booking-v3 date hint need
+separate fixes and separate verification. Neither is marked fixed by this reassessment.
+</Callout>
+
+## What the reports support
+
+<CauseTable ticket={4471} />
+
+### Shared parser reads month first
+
+For a day-first tenant, the shared parser reads the date month first. For example, an app
+report from Harbour Dental says 7 April became 4 July (R-41200); another reverses 4 July and
+7 April (R-41201). Fixing this path requires an explicit date contract at the boundary and
+regression checks for each affected channel. Intake tags are a guess, not the cause.
+
+### Booking-v3 prints a month-first hint for day-first tenants
+
+In the form channel, booking-v3 displays `MM/DD/YYYY` while the form reads the date in the
+tenant's day-first order. These users follow the displayed instruction and still get a wrong
+date. Fix the hint and parsing contract together; retest day-first tenants through booking-v3.
+This cause must not disappear inside the shared-parser ticket.
+
+### Uncertain symptom reports stay visible
+
+Some reports describe a one-day move rather than a clear month/day swap. The component's
+footnotes identify how many are filed by tenant. Preserve those reports for follow-up: ask
+for the input value, timezone, expected date and actual date. Their wording alone does not
+prove a third root cause, and filing them by tenant is not proof of an individual diagnosis.
+
+## When the desk received reports and when it merged them
+
+<QueueTimeline ticket={4471} />
+
+Receipt time and merge time are separate events. A late merge does not date the original
+incident. The chart computes both series from the source records.
+
+## Triage and knowledge changes proposed
+
+Read the tenant's locale, form and channel before treating two reports as duplicates. Check
+the report ID first so overlapping export pages do not inflate counts. A matching subject
+does not prove a matching cause; a different subject does not prove a different cause.
+
+The accepted decision 0001 remains intact as history. Proposed decision 0002 describes the
+replacement rule. The original #4471 page remains the historical claim this reassessment
+corrects. Recompute this page against a fresh desk export before relying on it for live triage.
+
+## Evidence and limits
+
+This page runs `CauseTable`, `QueueTimeline`, tenant lookup and `causes.ts` from the supplied
+KB export. It does not assert the live queue has stopped changing. The prepared issue drafts
+carry the computed counts, report IDs, source paths and verification criteria. The repository
+README links the cause-specific GitHub tickets and records their filing status.
+
+<RenderStamp {signature} />

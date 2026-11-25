@@ -1,0 +1,33 @@
+---
+layout: runbook
+title: '0002 proposal: duplicates share an evidenced cause'
+owner: support desk
+status: proposed
+reviewed: '2026-11-25'
+signature: "v1.eyJzdWIiOiIyMzIxIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTU2MjExNTEsImV4cCI6MTc5NTcwNzU1MX0.Fq7pQJWSPZkrBkvvpl_wXYN2qNd5LkfkKISLpjMxEjQ"
+---
+
+<script>
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+## Context
+
+The accepted subject-matching decision groups different causes and separates reports of the
+same cause. The #4471 executable views demonstrate the difference. Intake tags can disagree
+with tenant-based classification, so they cannot determine the fix.
+
+## Proposed replacement
+
+Deduplicate exported rows by report ID. For each unique report, look up the tenant's locale
+and booking form, then inspect its channel and body. Group duplicates by an evidenced shared
+cause; keep uncertain reports visible with their source IDs and a request for missing facts.
+An unknown tenant must stay unplaced until evidence supports a cause.
+
+## Consequences and status
+
+Triage takes more reading and tenant context. It preserves separate work for the shared
+parser and booking-v3 hint, so one fix cannot close both by accident. Decision 0001 is not
+edited. This replacement remains proposed until the support owner accepts it.
+
+<RenderStamp {signature} />
