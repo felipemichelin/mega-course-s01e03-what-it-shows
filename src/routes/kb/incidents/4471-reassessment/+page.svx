@@ -25,6 +25,10 @@ separate fixes and separate verification. Neither is marked fixed by this reasse
 
 ## What the reports support
 
+The cause-specific work is filed as [shared parser, 379 reports](https://github.com/felipemichelin/mega-course-s01e03-what-it-shows/issues/1)
+and [booking-v3 hint, 33 reports](https://github.com/felipemichelin/mega-course-s01e03-what-it-shows/issues/2).
+The table's ticket column describes the original export, before these new tickets were filed.
+
 <CauseTable ticket={4471} />
 
 ### Shared parser reads month first

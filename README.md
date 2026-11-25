@@ -15,7 +15,7 @@ service implementation or real customer queue.
 GitHub tickets:
 
 - [Shared parser: 379 reports](https://github.com/felipemichelin/mega-course-s01e03-what-it-shows/issues/1)
-- Booking-v3 hint: 33 reports. The full issue body is in `issues/02-form-hint.md`; filing is pending a temporary GitHub write-service error.
+- [Booking-v3 hint: 33 reports](https://github.com/felipemichelin/mega-course-s01e03-what-it-shows/issues/2)
 
 Use Node 24 or later: `npm ci`, `npm run analyze`, then `npm run build`.
 The local preview is `npm run preview`. Builds execute the original Svelte KB components;
