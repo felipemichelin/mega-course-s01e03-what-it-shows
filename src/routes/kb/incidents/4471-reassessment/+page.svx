@@ -23,6 +23,15 @@ Keep one ticket per cause. The shared month-first parser and the booking-v3 date
 separate fixes and separate verification. Neither is marked fixed by this reassessment.
 </Callout>
 
+## Current engineering disposition
+
+The [live engineering update](https://hq.mega.dev/challenges/what-it-shows#engineering-update),
+read on 25 November 2026, reports #4471 closed on 05 October. It identifies the parser as
+**FIXED**, with `fix(dates): parse dd/mm for eu locales`. It identifies the hint as **WON'T FIX**
+because the booking-v3 form was retired. Accordingly, the parser issue is closed as completed
+and the hint issue as not planned. Retiring a form does not establish that its hint was fixed.
+These are the desk's reported dispositions; this reassessment did not test a production release.
+
 ## What the reports support
 
 The cause-specific work is filed as [shared parser, 379 reports](https://github.com/felipemichelin/mega-course-s01e03-what-it-shows/issues/1)

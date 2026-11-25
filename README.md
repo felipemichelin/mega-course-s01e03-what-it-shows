@@ -17,6 +17,10 @@ GitHub tickets:
 - [Shared parser: 379 reports](https://github.com/felipemichelin/mega-course-s01e03-what-it-shows/issues/1)
 - [Booking-v3 hint: 33 reports](https://github.com/felipemichelin/mega-course-s01e03-what-it-shows/issues/2)
 
+The live course desk subsequently reported the parser fixed and booking-v3 retired. The parser
+issue is closed as completed; the hint issue is closed as not planned. The KB page records
+that distinction and attributes the dispositions to engineering rather than claiming a local fix.
+
 Use Node 24 or later: `npm ci`, `npm run analyze`, then `npm run build`.
 The local preview is `npm run preview`. Builds execute the original Svelte KB components;
 the static rendered page includes its CSS and needs no external requests.

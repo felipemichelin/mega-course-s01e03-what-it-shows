@@ -1,5 +1,11 @@
 # Booking-v3 date hint contradicts day-first tenant parsing — 33 reports
 
+## Engineering disposition — not planned
+
+The live course desk update, read on 25 November 2026, reports `#4471 · closed 05 oct` and `hint WON'T FIX booking-v3 form retired`. This issue is closed as not planned because its form was retired. This is not a claim that the hint was fixed.
+
+Source: https://hq.mega.dev/challenges/what-it-shows#engineering-update.
+
 ## Scope and count
 
 Reports: **33 unique form-channel reports**, across **3 tenants**, first seen **2026-04-17**, last seen **2026-09-22** in the supplied export. They were merged into #4471 but need a separate issue from the shared parser. The live desk can have changed since export.

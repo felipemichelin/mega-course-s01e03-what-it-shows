@@ -1,5 +1,11 @@
 # Shared month-first date parser swaps dates for day-first tenants — 379 reports
 
+## Engineering disposition — completed
+
+The live course desk update, read on 25 November 2026, reports `#4471 · closed 05 oct` and `parser FIXED fix(dates): parse dd/mm for eu locales`. This issue is closed as completed on that engineering evidence. The harness did not run or independently verify the production fix.
+
+Source: https://hq.mega.dev/challenges/what-it-shows#engineering-update.
+
 ## Scope and count
 
 Reports: **379 unique reports**, across **11 tenants**, first seen **2026-04-01**, last seen **2026-10-04** in the supplied export. All are currently merged into #4471. These are export counts; the live desk can have changed.
