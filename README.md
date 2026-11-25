@@ -31,7 +31,8 @@ counts, not asserted live totals. The accepted decision 0001 remains unchanged.
 
 The course-issued frontmatter signature is provenance required by this exercise. It is not
 a model-provider API key. No other course tickets, receipts, private logs or HQ files belong
-in this repository. The course has not yet accepted this submission.
+in this repository. The course accepted this submission on 25 November 2026;
+the [course debrief](https://hq.mega.dev/challenges/what-it-shows#debrief) is saved.
 
 ---
 
